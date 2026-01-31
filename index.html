@@ -1,42 +1,539 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Harsh Kothari | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Harsh Kothari - Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2d5e8f",
+                        "background-light": "#f9f9fa",
+                        "background-dark": "#14151A",
+                        "surface-dark": "#24272D",
+                        "accent-teal": "#4fd1c5",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .cyber-ticker {
+            display: flex;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .ticker-content {
+            display: flex;
+            animation: scroll 40s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .custom-mask {
+            clip-path: polygon(10% 0, 100% 0%, 100% 90%, 90% 100%, 0 100%, 0% 10%);
+        }
+        .project-card:hover {
+            box-shadow: 0 0 20px rgba(45, 94, 143, 0.3);
+            border-color: #2d5e8f;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined text-xl">terminal</span>
+                </div>
+                <span class="text-xl font-black tracking-tighter uppercase">Harsh Kothari</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-bold uppercase tracking-widest text-primary border-b-2 border-primary" href="#home">Home</a>
+                <a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#projects">Projects</a>
+                <a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="#experience">Experience</a>
+                <a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="blog.html">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="mailto:harshkothari12312@gmail.com" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-6 rounded text-xs uppercase tracking-widest transition-all">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </header>
 
-  <header>
-    <h1>Harsh Kothari</h1>
-    <p>Software Developer | AI Researcher | Game Dev</p>
-  </header>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <section id="home" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-12 md:py-24">
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-tighter">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    Open for Full-Time Roles - Graduating May 2026
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black leading-none tracking-tighter text-slate-900 dark:text-white uppercase">
+                    Software <span class="text-primary italic">Engineer</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                    Building scalable systems from frontend to backend, with expertise in cloud infrastructure, full-stack development, and machine learning. 3+ years of experience architecting production software that serves millions.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects" class="bg-primary text-white px-8 py-4 rounded-lg font-black text-sm uppercase tracking-widest hover:translate-y-[-2px] transition-all shadow-xl shadow-primary/20">
+                        View Projects
+                    </a>
+                    <a href="Harsh_Kothari_Resume.pdf" target="_blank" class="border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-surface-dark px-8 py-4 rounded-lg font-black text-sm uppercase tracking-widest transition-all">
+                        View Resume
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5 relative">
+                <div class="relative z-10 custom-mask w-full aspect-square bg-slate-200 dark:bg-surface-dark overflow-hidden group">
+                    <div class="absolute inset-0 bg-primary/20 mix-blend-multiply group-hover:bg-transparent transition-all duration-500"></div>
+                    <img alt="Harsh Kothari - Software Engineer" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="Port.png"/>
+                    <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background-dark to-transparent">
+                        <p class="text-xs font-bold text-primary uppercase tracking-[0.3em]">Based in Chicago, IL</p>
+                    </div>
+                </div>
+                <!-- Decorative Elements -->
+                <div class="absolute -top-4 -right-4 w-24 h-24 border-t-4 border-r-4 border-primary rounded-tr-xl -z-0 opacity-50"></div>
+                <div class="absolute -bottom-4 -left-4 w-24 h-24 border-b-4 border-l-4 border-primary rounded-bl-xl -z-0 opacity-50"></div>
+            </div>
+        </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a graduate student at UIC specializing in AI, machine learning, and full-stack development. Passionate about building secure, scalable systems and innovative games.</p>
-  </section>
+        <!-- Tech Ticker -->
+        <section class="py-12 border-y border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div class="cyber-ticker">
+                <div class="ticker-content flex gap-12 items-center">
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">code</span> C# / .NET</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">coffee</span> Java / Spring Boot</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">bolt</span> Apache Spark</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">cloud</span> AWS (EC2, S3, EKS)</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">storage</span> Apache Flink</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">hub</span> Kubernetes</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">database</span> PostgreSQL</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">speed</span> Redis</span>
+                    <!-- Duplicate for infinite effect -->
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">code</span> C# / .NET</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">coffee</span> Java / Spring Boot</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">bolt</span> Apache Spark</span>
+                    <span class="text-2xl font-black text-slate-300 dark:text-slate-700 flex items-center gap-4 uppercase tracking-tighter"><span class="material-symbols-outlined text-primary">cloud</span> AWS (EC2, S3, EKS)</span>
+                </div>
+            </div>
+        </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>NoProp ZKP Denoising</strong> – zk-SNARK proof system for privacy-preserving inference on CIFAR-10.</li>
-      <li><strong>Shadow Abyss</strong> – A 3D dungeon-crawling Unity game with light-based mechanics.</li>
-      <li><strong>Trade-Inflation Model</strong> – ML models analyzing global trade impact on inflation using panel regression and Bayesian methods.</li>
-    </ul>
-  </section>
+        <!-- About Me Section -->
+        <section class="py-24">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-8">About Me</h2>
+                <div class="space-y-6 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p>
+                        I'm a software engineer who loves building systems that work reliably at scale. My journey started with a Bachelor's in Computer & Communication Engineering from Manipal Institute of Technology, where I discovered my passion for distributed systems and backend development.
+                    </p>
+                    <p>
+                        After graduation, I spent three years at E-Tech Innovative Services, where I led the development of <strong class="text-slate-900 dark:text-white">E-Krishi Mandi</strong>—a cloud-based marketplace that transformed how agricultural commodities are traded in India. Starting from scratch, I architected a microservices-based system that now serves over 100,000 users and processes millions of transactions annually.
+                    </p>
+                    <p>
+                        I learned that great engineering isn't just about writing clever code—it's about understanding real problems, designing thoughtful solutions, and maintaining systems in production. I got really comfortable with the full software lifecycle: from debugging production issues at 2am to optimizing databases that were slowing down under load to mentoring junior developers on the team.
+                    </p>
+                    <p>
+                        Currently, I'm completing my <strong class="text-slate-900 dark:text-white">Master's in Computer Science at UIC</strong> (graduating May 2026), where I'm working on machine learning research—specifically, making neural networks "forget" specific data points efficiently through machine unlearning techniques.
+                    </p>
+                    <p>
+                        What drives me is building things that actually work. Not just proof-of-concepts or demos, but systems that handle real traffic, fail gracefully, recover automatically, and scale when needed.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: harshkothari12312@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/Cygnus2505" target="_blank">github.com/Cygnus2505</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/harsh-kothari-99b6a0196/" target="_blank">linkedin.com/Harsh-Kothari</a></p>
-  </section>
+        <!-- Featured Projects Grid -->
+        <section id="projects" class="py-24 border-t border-slate-200 dark:border-slate-800">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4">Featured Projects</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Production-grade distributed systems built to scale and solve real-world problems.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1: E-Krishi Mandi -->
+                <div class="project-card group bg-slate-100 dark:bg-surface-dark rounded-lg p-2 border border-transparent transition-all overflow-hidden flex flex-col">
+                    <div class="aspect-video w-full rounded-md overflow-hidden bg-slate-900 relative flex items-center justify-center">
+                        <img alt="E-Krishi Mandi Marketplace" class="w-3/4 h-auto object-contain group-hover:scale-105 transition-all duration-500" src="LTC_Logo-2.gif"/>
+                        <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 dark:text-white">E-Krishi Mandi</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Cloud-Based Agricultural Marketplace</p>
+                            </div>
+                            <span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">2021-2024</span>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                            Led end-to-end development of large-scale distributed system serving 100,000+ users. Architected microservices with .NET, Java, and Node.js. Implemented CI/CD pipelines reducing deployment time by 40% while maintaining 99.9% uptime.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">.NET</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">JAVA</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">NODE.JS</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">AWS</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">REDIS</span>
+                        </div>
+                    </div>
+                </div>
 
-  <footer>
-    <p>© 2025 Harsh Kothari</p>
-  </footer>
+                <!-- Project 2: GraphRAG -->
+                <div class="project-card group bg-slate-100 dark:bg-surface-dark rounded-lg p-2 border border-transparent transition-all overflow-hidden flex flex-col">
+                    <div class="aspect-video w-full rounded-md overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                        <img alt="GraphRAG Knowledge Graph System" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&h=450&fit=crop&q=80"/>
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 dark:text-white">GraphRAG System</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">3-Part Distributed Knowledge Graph Pipeline for LLMs</p>
+                            </div>
+                            <span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">2025</span>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                            Comprehensive 3-part system: (1) RAG foundation with Scala, Apache Lucene, Ollama embeddings, and Hadoop MapReduce for semantic search, (2) Incremental pipeline using Spark + Delta Lake reducing reprocessing by 70%, (3) Real-time knowledge graph with Neo4j achieving sub-2-second query latency. Deployed on AWS EMR/EKS.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mb-3">
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">SCALA</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">SPARK</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">FLINK</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">DELTA LAKE</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">NEO4J</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">HADOOP</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">AWS EMR</span>
+                        </div>
+                        <div class="flex gap-2 text-xs">
+                            <a href="https://github.com/Cygnus2505/RAG_System" target="_blank" class="flex items-center gap-1 text-primary hover:underline font-bold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">link</span>
+                                Part 1: RAG System
+                            </a>
+                            <span class="text-slate-400">|</span>
+                            <a href="https://github.com/Cygnus2505/Incremental_RAG_PipelinewithSpark_and_DeltaLake" target="_blank" class="flex items-center gap-1 text-primary hover:underline font-bold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">link</span>
+                                Part 2: Spark Pipeline
+                            </a>
+                            <span class="text-slate-400">|</span>
+                            <a href="https://github.com/Cygnus2505/GraphRAG-IncrementalKnowledgeGraphPipeline-for-LLMs" target="_blank" class="flex items-center gap-1 text-primary hover:underline font-bold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">link</span>
+                                Part 3: Knowledge Graph
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Project 3: Machine Unlearning Research -->
+                <div class="project-card group bg-slate-100 dark:bg-surface-dark rounded-lg p-2 border border-transparent transition-all overflow-hidden flex flex-col">
+                    <div class="aspect-video w-full rounded-md overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                        <img alt="Machine Unlearning Research" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&q=80"/>
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 dark:text-white">Machine Unlearning Research</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Privacy-Preserving Neural Networks & Influence Analysis</p>
+                            </div>
+                            <span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">2025</span>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                            Graduate research at UIC on efficient data deletion from neural networks. Built exact flip point clustering using DBSCAN for influence analysis, identifying vulnerable test points through ground-truth retraining. Implemented SISA-based parallel unlearning with sharding, optimizing pipelines by 20%. Includes verifiable unlearning with reproducible experiment harnesses.
+                        </p>
+                        <div class="flex gap-2 flex-wrap mb-3">
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">PYTHON</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">C++</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">PYTORCH</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">DBSCAN</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">SISA</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">PARALLEL</span>
+                        </div>
+                        <div class="flex gap-2 text-xs">
+                            <a href="https://github.com/Cygnus2505/Influence_points-main" target="_blank" class="flex items-center gap-1 text-primary hover:underline font-bold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">link</span>
+                                Influence Points
+                            </a>
+                            <span class="text-slate-400">|</span>
+                            <a href="https://github.com/Cygnus2505/Verifiable-Machine-Unlearning" target="_blank" class="flex items-center gap-1 text-primary hover:underline font-bold">
+                                <span class="material-symbols-outlined" style="font-size: 14px;">link</span>
+                                Verifiable Unlearning
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: NoProp ZKP -->
+                <div class="project-card group bg-slate-100 dark:bg-surface-dark rounded-lg p-2 border border-transparent transition-all overflow-hidden flex flex-col">
+                    <div class="aspect-video w-full rounded-md overflow-hidden bg-slate-200 dark:bg-slate-800 relative">
+                        <img alt="Zero-Knowledge Proof System" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" src="https://via.placeholder.com/800x450/2d5e8f/ffffff?text=ZK+Proof"/>
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-black uppercase tracking-tight text-slate-900 dark:text-white">NoProp ZKP</h3>
+                                <p class="text-sm text-slate-500 dark:text-slate-400">Privacy-Preserving Inference System</p>
+                            </div>
+                            <span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">2024</span>
+                        </div>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                            Built zk-SNARK proof system for privacy-preserving machine learning inference on CIFAR-10 dataset, enabling secure predictions without exposing model weights or training data.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">PYTHON</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">ZK-SNARK</span>
+                            <span class="text-[10px] font-bold px-2 py-0.5 border border-slate-300 dark:border-slate-700 rounded text-slate-500">CRYPTO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 border-t border-slate-200 dark:border-slate-800">
+            <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-12">Experience</h2>
+            <div class="space-y-12">
+                <!-- Experience 1 -->
+                <div class="relative pl-8 border-l-2 border-primary">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">Software Engineer</h3>
+                            <p class="text-primary font-bold">E-Tech Innovative Services Private Limited</p>
+                        </div>
+                        <span class="text-sm font-bold text-slate-500">Sep 2021 – May 2024 (3 years)</span>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">Jaipur, India</p>
+                    <ul class="space-y-3 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Led end-to-end development of E-Krishi Mandi marketplace serving 100,000+ users with cloud-based infrastructure ensuring high availability</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Designed scalable microservices architecture with .NET, Java, and Node.js applying design patterns for maintainability</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Built production DevOps pipelines with Jenkins, reducing deployment time by 40% while maintaining 99.9% uptime</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Optimized application performance by 30% through caching strategies (Redis) and database optimization</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Mentored junior engineers and established coding standards that reduced production bugs by 85%</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="relative pl-8 border-l-2 border-primary">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary"></div>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">Graduate Research Assistant</h3>
+                            <p class="text-primary font-bold">University of Illinois Chicago</p>
+                        </div>
+                        <span class="text-sm font-bold text-slate-500">Feb 2025 – Present</span>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">Chicago, IL</p>
+                    <ul class="space-y-3 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Optimized machine-unlearning pipeline by 20% through systematic refactoring in Python and C++</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Parallelized machine unlearning using SISA (sharding/slicing) for efficient deletion with thread-level execution</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary mt-1">▸</span>
+                            <span>Built reproducible experiment harnesses with deterministic seeds and automated logging pipelines</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="py-24 border-t border-slate-200 dark:border-slate-800">
+            <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-12">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-xl p-8">
+                    <h3 class="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-6">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">C#</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Java</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Python</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Scala</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">C++</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">JavaScript/TypeScript</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">SQL</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-xl p-8">
+                    <h3 class="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-6">Cloud & Infrastructure</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">AWS (EC2, S3, EKS)</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Docker</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Kubernetes</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">CI/CD</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Microservices</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-xl p-8">
+                    <h3 class="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-6">Backend & Frameworks</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">.NET Framework</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Spring Boot</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Node.js</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">RESTful APIs</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-xl p-8">
+                    <h3 class="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-6">Data & Databases</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Apache Spark</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Apache Flink</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Apache Kafka</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">PostgreSQL</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">MongoDB</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Redis</span>
+                        <span class="px-4 py-2 bg-primary/10 text-primary rounded font-bold text-sm">Neo4j</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="py-24 border-t border-slate-200 dark:border-slate-800">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4">Engineering Blog</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Thoughts on distributed systems, scalability, and software craftsmanship.</p>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <article class="group cursor-pointer border-b border-slate-200 dark:border-slate-800 pb-8">
+                    <div class="flex gap-6">
+                        <div class="flex-none text-slate-400 dark:text-slate-600 font-black text-lg">01</div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xs font-bold text-primary uppercase tracking-widest">Distributed Systems</span>
+                                <span class="text-xs text-slate-500">Coming Soon</span>
+                            </div>
+                            <h3 class="text-2xl font-bold group-hover:text-primary transition-colors leading-tight mb-3">Building Fault-Tolerant Microservices: Lessons from E-Krishi Mandi</h3>
+                            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">How we achieved 99.9% uptime serving 100,000+ users through circuit breakers, retry mechanisms, and graceful degradation patterns in a distributed marketplace.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group cursor-pointer border-b border-slate-200 dark:border-slate-800 pb-8">
+                    <div class="flex gap-6">
+                        <div class="flex-none text-slate-400 dark:text-slate-600 font-black text-lg">02</div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xs font-bold text-primary uppercase tracking-widest">Performance</span>
+                                <span class="text-xs text-slate-500">Coming Soon</span>
+                            </div>
+                            <h3 class="text-2xl font-bold group-hover:text-primary transition-colors leading-tight mb-3">Optimizing Apache Spark Pipelines: From 10 Hours to 3</h3>
+                            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Deep dive into partition tuning, broadcast joins, and incremental processing strategies that reduced our GraphRAG pipeline processing time by 70%.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group cursor-pointer border-b border-slate-200 dark:border-slate-800 pb-8">
+                    <div class="flex gap-6">
+                        <div class="flex-none text-slate-400 dark:text-slate-600 font-black text-lg">03</div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xs font-bold text-primary uppercase tracking-widest">DevOps</span>
+                                <span class="text-xs text-slate-500">Coming Soon</span>
+                            </div>
+                            <h3 class="text-2xl font-bold group-hover:text-primary transition-colors leading-tight mb-3">Zero-Downtime Deployments with Kubernetes Blue-Green Strategy</h3>
+                            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Practical guide to implementing blue-green deployments on AWS EKS, including traffic shifting, health checks, and automated rollback mechanisms.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="group cursor-pointer">
+                    <div class="flex gap-6">
+                        <div class="flex-none text-slate-400 dark:text-slate-600 font-black text-lg">04</div>
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xs font-bold text-primary uppercase tracking-widest">Machine Learning</span>
+                                <span class="text-xs text-slate-500">Coming Soon</span>
+                            </div>
+                            <h3 class="text-2xl font-bold group-hover:text-primary transition-colors leading-tight mb-3">Making Neural Networks Forget: An Introduction to Machine Unlearning</h3>
+                            <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Exploring SISA framework and efficient data deletion techniques for privacy-compliant machine learning systems in the age of GDPR and data rights.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="py-24 text-center border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-slate-900 dark:text-white">Let's build <span class="text-primary italic">scalable</span> systems together</h2>
+                <p class="text-lg text-slate-500 dark:text-slate-400">Graduating May 2026 and seeking full-time Software Engineer roles. Open to full-stack development, backend engineering, ML/AI, distributed systems, and cloud infrastructure positions.</p>
+                <div class="flex justify-center gap-6 flex-wrap">
+                    <a href="mailto:harshkothari12312@gmail.com" class="bg-primary text-white px-10 py-5 rounded-lg font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-primary/30">
+                        Get In Touch
+                    </a>
+                    <a href="Harsh_Kothari_Resume.pdf" target="_blank" class="border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-surface-dark px-10 py-5 rounded-lg font-black text-sm uppercase tracking-widest transition-all">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <div class="size-6 bg-slate-300 dark:bg-slate-700 rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm">terminal</span>
+                </div>
+                <p class="text-sm font-bold uppercase tracking-tighter opacity-50">© 2026 Harsh Kothari — Building Systems That Scale</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors" href="https://github.com/Cygnus2505" target="_blank">GitHub</a>
+                <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors" href="https://www.linkedin.com/in/harsh-kothari-99b6a0196/" target="_blank">LinkedIn</a>
+                <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors" href="mailto:harshkothari12312@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Blog - Harsh Kothari</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2d5e8f",
+                        "background-light": "#f9f9fa",
+                        "background-dark": "#14151A",
+                        "surface-dark": "#24272D",
+                        "accent-teal": "#4fd1c5",
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined text-xl">terminal</span>
+                </div>
+                <a href="index.html" class="text-xl font-black tracking-tighter uppercase hover:text-primary transition-colors">Harsh Kothari</a>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="index.html#home">Home</a>
+                <a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="index.html#projects">Projects</a>
+                <a class="text-sm font-bold uppercase tracking-widest hover:text-primary transition-colors" href="index.html#experience">Experience</a>
+                <a class="text-sm font-bold uppercase tracking-widest text-primary border-b-2 border-primary" href="blog.html">Blog</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="mailto:harshkothari12312@gmail.com" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-6 rounded text-xs uppercase tracking-widest transition-all">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        <!-- Blog Header -->
+        <section class="py-12 md:py-24">
+            <div class="max-w-3xl">
+                <h1 class="text-6xl md:text-8xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-6">
+                    Engineering <span class="text-primary italic">Blog</span>
+                </h1>
+                <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Deep dives into distributed systems, scalability patterns, and lessons learned from building production software.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Posts -->
+        <section class="space-y-16">
+            <!-- Blog Post 1 -->
+            <article class="border-b border-slate-200 dark:border-slate-800 pb-16">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Distributed Systems</span>
+                    <span class="text-xs text-slate-500">Coming Soon</span>
+                </div>
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
+                    Building Fault-Tolerant Microservices: Lessons from E-Krishi Mandi
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    When you're building a marketplace that processes millions of transactions and serves 100,000+ users, downtime isn't an option. Here's how we achieved 99.9% uptime through circuit breakers, retry mechanisms, and graceful degradation patterns.
+                </p>
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">What You'll Learn</h3>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Circuit breaker patterns and when to use them</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Exponential backoff and jitter for retry strategies</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Graceful degradation: failing without taking everything down</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Monitoring and alerting for distributed systems</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">MICROSERVICES</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">RESILIENCE</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">AWS</span>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="border-b border-slate-200 dark:border-slate-800 pb-16">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Performance</span>
+                    <span class="text-xs text-slate-500">Coming Soon</span>
+                </div>
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
+                    Optimizing Apache Spark Pipelines: From 10 Hours to 3
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    Processing 500+ research papers shouldn't take all night. Here's how we reduced our GraphRAG pipeline processing time by 70% through smart partitioning, broadcast joins, and incremental processing.
+                </p>
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Key Topics</h3>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Partition tuning: finding the sweet spot for your data</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Broadcast joins vs shuffle joins: when to use each</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Delta Lake for incremental processing and time travel</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Memory management and spill prevention</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">APACHE SPARK</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">SCALA</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">PERFORMANCE</span>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="border-b border-slate-200 dark:border-slate-800 pb-16">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest">DevOps</span>
+                    <span class="text-xs text-slate-500">Coming Soon</span>
+                </div>
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
+                    Zero-Downtime Deployments with Kubernetes Blue-Green Strategy
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    Deploying new versions shouldn't mean taking your service down. A practical guide to implementing blue-green deployments on AWS EKS, complete with traffic shifting, health checks, and automated rollbacks.
+                </p>
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">What's Covered</h3>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Blue-green vs canary vs rolling deployments</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Service mesh configuration for traffic splitting</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Health checks and readiness probes done right</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Automated rollback strategies when things go wrong</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">KUBERNETES</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">AWS EKS</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">CI/CD</span>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="border-b border-slate-200 dark:border-slate-800 pb-16">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Machine Learning</span>
+                    <span class="text-xs text-slate-500">Coming Soon</span>
+                </div>
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
+                    Making Neural Networks Forget: An Introduction to Machine Unlearning
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    With GDPR and data privacy regulations, we need to make ML models "forget" specific training data. Here's how the SISA framework and sharded retraining make this possible without starting from scratch.
+                </p>
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">You'll Learn About</h3>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Why retraining from scratch doesn't scale</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>SISA: Sharded, Isolated, Sliced, and Aggregated training</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Parallel retraining strategies for efficient deletion</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Measuring unlearning effectiveness and model quality</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">MACHINE LEARNING</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">PRIVACY</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">RESEARCH</span>
+                </div>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="border-b border-slate-200 dark:border-slate-800 pb-16">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Architecture</span>
+                    <span class="text-xs text-slate-500">Coming Soon</span>
+                </div>
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
+                    Database Optimization: Reducing Query Time from 5 Seconds to 50ms
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    Slow queries kill user experience. Here's how we optimized our PostgreSQL database through strategic indexing, query rewriting, and caching strategies to achieve 100x performance improvement.
+                </p>
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Topics Covered</h3>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>EXPLAIN ANALYZE: understanding your query execution plan</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Strategic indexing: B-tree, GIN, and partial indexes</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Redis caching patterns for read-heavy workloads</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Connection pooling and query optimization techniques</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">POSTGRESQL</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">REDIS</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">OPTIMIZATION</span>
+                </div>
+            </article>
+
+            <!-- Blog Post 6 -->
+            <article>
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest">Real-Time Systems</span>
+                    <span class="text-xs text-slate-500">Coming Soon</span>
+                </div>
+                <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
+                    Building Real-Time Data Pipelines with Apache Flink
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    Batch processing isn't enough when you need results now. Learn how to build low-latency stream processing pipelines with Apache Flink, handling millions of events with exactly-once semantics.
+                </p>
+                <div class="bg-slate-100 dark:bg-surface-dark rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">What We'll Cover</h3>
+                    <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Stream vs batch: when to use each paradigm</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Exactly-once processing guarantees with checkpointing</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>Watermarks and event time processing for late data</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="text-primary">▸</span>
+                            <span>State management and fault tolerance in production</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">APACHE FLINK</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">STREAMING</span>
+                    <span class="px-3 py-1 bg-primary/10 text-primary rounded text-xs font-bold">REAL-TIME</span>
+                </div>
+            </article>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="py-24">
+            <div class="bg-slate-100 dark:bg-surface-dark rounded-xl p-12 text-center">
+                <h2 class="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4">
+                    Stay Updated
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto">
+                    Get notified when I publish new articles about distributed systems, performance optimization, and production engineering.
+                </p>
+                <div class="max-w-md mx-auto flex gap-4">
+                    <input type="email" placeholder="your.email@example.com" class="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-background-dark border border-slate-300 dark:border-slate-700 focus:outline-none focus:border-primary text-sm"/>
+                    <button class="bg-primary text-white px-8 py-3 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <div class="size-6 bg-slate-300 dark:bg-slate-700 rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-sm">terminal</span>
+                </div>
+                <p class="text-sm font-bold uppercase tracking-tighter opacity-50">© 2026 Harsh Kothari — Building Systems That Scale</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors" href="https://github.com/Cygnus2505" target="_blank">GitHub</a>
+                <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors" href="https://www.linkedin.com/in/harsh-kothari-99b6a0196/" target="_blank">LinkedIn</a>
+                <a class="text-xs font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors" href="mailto:harshkothari12312@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
