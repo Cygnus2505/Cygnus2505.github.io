@@ -88,7 +88,6 @@ This portfolio is designed for:
 ## 📞 Contact Information
 
 - **Email**: harshkothari12312@gmail.com
-- **Phone**: 872-214-0114
 - **GitHub**: [github.com/Cygnus2505](https://github.com/Cygnus2505)
 - **LinkedIn**: [linkedin.com/in/harsh-kothari-99b6a0196](https://www.linkedin.com/in/harsh-kothari-99b6a0196/)
 
