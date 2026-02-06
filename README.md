@@ -59,7 +59,7 @@ This portfolio website features:
 1. **E-Krishi Mandi** - Cloud marketplace serving 100,000+ users
 2. **GraphRAG** - Distributed knowledge graph with Apache Spark & Flink
 3. **Machine Unlearning Pipeline** - Privacy-preserving neural networks
-4. **NoProp ZKP** - Zero-knowledge proof system
+4. **Urban Traffic Intelligence Platform** - AI-powered traffic understanding & prediction for Chicago ([Live Demo](https://chicago-traffic-ai.streamlit.app/))
 
 ### Technical Skills
 - **Languages**: C#, Java, Python, Scala, C++, TypeScript, SQL
